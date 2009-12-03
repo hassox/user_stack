@@ -1,6 +1,6 @@
 module UserStack::DataMapper
   class User
-    include DataMapper::Resource
+    include ::DataMapper::Resource
 
     property :id,         Serial
     property :type,       Discriminator

@@ -24,7 +24,6 @@ class UserStack < Pancake::Stacks::Short
   def self.user_class
     unless defined?(User)
       const_set("User", DataMapper::User)
-
     end
     User
   end
@@ -33,7 +32,6 @@ class UserStack < Pancake::Stacks::Short
   before_build_stack do
     user_class
   end
-
 end
 
 require ::File.join(Pancake.get_root(__FILE__, "user_stack"), "user_stack")

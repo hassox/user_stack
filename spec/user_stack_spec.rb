@@ -1,11 +1,25 @@
 require ::File.expand_path(::File.dirname(__FILE__) + '/spec_helper')
 
 describe "user_stack" do
-  def app
-    user_stack.stackup
+  describe "GET /" do
+    it "should be successful" do
+      get "/"
+      last_response.should be_successful
+    end
+
+    it "should provide a url for :users" do
+      Pancake.url(UserStack,:users).should == "/"
+    end
   end
 
-  it "fails" do
-    fail "hey buddy, you should probably rename this file and start specing for real"
+  describe "GET /signup" do
+    it "should provide a signup url" do
+      get "/signup"
+      last_response.should be_successful
+    end
+
+    it "should setup a signup route" do
+      Pancake.url(UserStack, :signup).should == "/signup"
+    end
   end
 end

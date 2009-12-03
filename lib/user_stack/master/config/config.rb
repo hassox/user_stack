@@ -3,5 +3,5 @@ DataMapper.setup(:default, :adapter => "sqlite3", :database => ~"../db/developme
 
 
 UserStack.after_build_stack do
-  DataMapper.auto_upgrade!
+  ::DataMapper.auto_upgrade!
 end
