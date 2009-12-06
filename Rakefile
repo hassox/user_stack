@@ -10,7 +10,8 @@ begin
     gem.email = "TODO"
     gem.homepage = "TODO"
     gem.authors = ["TODO"]
-    gem.add_dependency "pancake", ">=0.1.8"
+    gem.add_dependency "pancake", ">=0.1.27"
+    gem.add_dependency "veneer",  ">=0.1.1"
     gem.files = FileList["[A-Z]*", "pancake.init", "{lib,spec,rails}/**/*"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end

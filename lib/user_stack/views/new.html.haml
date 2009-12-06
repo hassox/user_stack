@@ -1,0 +1,17 @@
+- inherits_from :default!
+
+- content_block :content do
+  %form{:action => url(:users), :method => :post}
+    %ul
+      %li
+        %label{:for => "user_login"}Login:
+        %input{:type => "text", :value => v.user.login, :name => "user[login]"}/
+      %li
+        %label{:for => "user_password"}Password:
+        %input#user_password{:type => "password", :value => "", :name => "user[password]"}/
+      %li
+        %label{:for => "user_password_conf"}Password:
+        %input#user_password_conf{:type => "password", :value => "", :name => "user[password_confirmation]"}/
+      %li
+        %input{:type => "submit", :value => "Signup"}/
+
