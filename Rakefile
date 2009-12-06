@@ -6,12 +6,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "user_stack"
-    gem.summary = %Q{TODO}
-    gem.email = "TODO"
-    gem.homepage = "TODO"
-    gem.authors = ["TODO"]
-    gem.add_dependency "pancake", ">=0.1.27"
-    gem.add_dependency "veneer",  ">=0.1.1"
+    gem.summary = %Q{A Stack that provides basic User management}
+    gem.email = "has.sox@gmail.com"
+    gem.homepage = "http://github.com/hassox/user_stack"
+    gem.authors = ["Daniel Neighman"]
+    gem.add_dependency "pancake", ">=0.1.28"
+    gem.add_dependency "veneer",  ">=0.1.3"
     gem.files = FileList["[A-Z]*", "pancake.init", "{lib,spec,rails}/**/*"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
