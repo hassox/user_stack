@@ -9,7 +9,9 @@ class UserStack
           attr_reader   :password
 
           klass = Veneer(base)
-          klass.before_save :ensure_password_set
+
+          klass.validates_presence_of     :password, :if => Proc.new{|m| !m.has_credentials?}
+          klass.validates_confirmation_of :password, :if => Proc.new{|m| m.password         }
         end
 
         def password=(pass)
@@ -25,11 +27,6 @@ class UserStack
         def has_credentials?
           ensure_auth
           !auth_data["password"].nil?
-        end
-
-        def ensure_password_set
-          ensure_auth
-          raise Veneer::Errors::BeforeSaveError, [:password, "Password Required"] unless crypted_password
         end
 
         private
