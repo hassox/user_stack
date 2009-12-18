@@ -1,7 +1,7 @@
 class UserStack::Controller
   publish
   def user_signup
-    v.user = Veneer(stack_class::User).new
+    v.user = Veneer(stack_class::User).new(params.user || {})
     render :new
   end
 

@@ -14,6 +14,8 @@ end
 
 UDU = UserStack::DataMapper::User
 
+Pancake.handle_errors!(true)
+
 Spec::Runner.configure do |config|
   config.include(Rack::Test::Methods)
   config.include(Pancake::Test::Matchers)

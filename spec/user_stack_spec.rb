@@ -2,9 +2,9 @@ require ::File.expand_path(::File.dirname(__FILE__) + '/spec_helper')
 
 describe "user_stack" do
   describe "GET /" do
-    it "should be successful" do
+    it "should be missing" do
       get "/"
-      last_response.should be_successful
+      last_response.should be_not_found
     end
 
     it "should provide a url for :users" do
